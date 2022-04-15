@@ -7,23 +7,26 @@ public class HomeWork<array> {
 //        ArrayChange();
 //        ArrayLoad();
 //        ArraySixOnTwo();
-        ArraySqare();
+//        ArraySqare();
+        ArrayMinMax();
 
     }
+
     private static void ArrayChange() {
-        int array [] = {1, 0, 1, 0, 1, 1, 1, 0, 0, 1};
+        int array[] = {1, 0, 1, 0, 1, 1, 1, 0, 0, 1};
         for (int i = 0; i < 10; i++) {
-           if (array[i] == 1) {
-               array[i] = 0;
-           }  else {
-               array[i] = 1;
-           }
+            if (array[i] == 1) {
+                array[i] = 0;
+            } else {
+                array[i] = 1;
+            }
 
         }
         System.out.println(Arrays.toString(array));
     }
-       private static void ArrayLoad() {
-        int[] array = new int [8];
+
+    private static void ArrayLoad() {
+        int[] array = new int[8];
         int i = 0;
         do {
             array[i] = 3 * i;
@@ -31,10 +34,11 @@ public class HomeWork<array> {
         } while (i < 8);
 
 
-           System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(array));
     }
+
     private static void ArraySixOnTwo() {
-        int array [] = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int array[] = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         for (int i = 0; i < 12; i++) {
             if (array[i] < 6) {
                 array[i] = array[i] * 6;
@@ -43,8 +47,9 @@ public class HomeWork<array> {
 
         System.out.println(Arrays.toString(array));
     }
+
     private static void ArraySqare() {
-        int [] [] table = new int [10] [10];
+        int[][] table = new int[10][10];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 if (j == i || (i + j) == 9) {
@@ -58,4 +63,22 @@ public class HomeWork<array> {
         }
     }
 
+    private static void ArrayMinMax() {
+        int array[] = {-7, 12, 54, 89, 1, 54, 0, 7868, 12, -89, 5, 9, 465, 7, 36, 4, 999};
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        for (int i = 0; i < 14; i++) {
+            a = array[i];
+            if (a > b) {
+                b = array[i];
+            } else if (a < c){
+                c = array[i];
+            }
+        }
+        System.out.println("Наибольшее число: " + b);
+        System.out.println("Наименьшее число:" + c);
+
+
+    }
 }
