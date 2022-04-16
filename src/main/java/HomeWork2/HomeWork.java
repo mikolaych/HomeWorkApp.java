@@ -1,6 +1,7 @@
 package HomeWork2;
 
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class HomeWork<array> {
     public static void main(String[] args) {
@@ -8,10 +9,10 @@ public class HomeWork<array> {
 //        ArrayLoad();
 //        ArraySixOnTwo();
 //        ArraySqare();
-        ArrayMinMax();
+//        ArrayMinMax();
+        ArrayDouble();
 
     }
-
     private static void ArrayChange() {
         int array[] = {1, 0, 1, 0, 1, 1, 1, 0, 0, 1};
         for (int i = 0; i < 10; i++) {
@@ -81,4 +82,43 @@ public class HomeWork<array> {
 
 
     }
-}
+    private static void ArrayDouble() {
+        int array[] = {10,8,2,3,1,1,10,2,2,1};
+
+        /*int array[] = new int [10];
+        for (int i = 0; i < 10; i++) {
+            ThreadLocalRandom random = ThreadLocalRandom.current();
+            int rand = random.nextInt(0, 10);
+            array[i] = rand;
+        }
+        System.out.println(Arrays.toString(array));*/
+
+        int a = 0;
+        int b = 0;
+        boolean e = false;
+        for (int i = 0; i < 10; i++) {
+            a = array[i] + a;
+            for (int j = 9; j > i ; j--) {
+                b = array[j] + b;
+            }
+            if (a == b) {
+                System.out.println(a + " = " + b);
+                e = true;
+                System.out.println(e);
+            }
+            b=0;
+            }
+
+
+
+
+        }
+
+
+
+
+
+    }
+
+
+
