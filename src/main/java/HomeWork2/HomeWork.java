@@ -10,9 +10,10 @@ public class HomeWork<array> {
 //        ArraySixOnTwo();
 //        ArraySqare();
 //        ArrayMinMax();
-        ArrayDouble();
-
+//        ArrayDouble();
+        ArrayMove();
     }
+
     private static void ArrayChange() {
         int array[] = {1, 0, 1, 0, 1, 1, 1, 0, 0, 1};
         for (int i = 0; i < 10; i++) {
@@ -113,12 +114,36 @@ public class HomeWork<array> {
 
 
         }
-
-
-
-
-
+    private static void ArrayMove() {
+        int array[] = {10,8,2,3,1,1,10,2,2,1};
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        int rand = random.nextInt(-10, 10);
+        int a = rand;
+       int b = 0;
+       System.out.println(a);
+        if (a > 0) {
+            for (int j = 0; j < a; j++) {
+                b = array[9];
+                for (int i = 8; i >= 0; i--) {
+                    array[i+1] = array[i];
+                }
+                array[0] = b;
+            }
+            System.out.println("Сдвигаем массив вправо на " + a + " элемента(ов)" );
+            System.out.println(Arrays.toString(array));
+        } else if (a < 0) {
+            for (int j = a; j < 0 ; j++) {
+                b = array[0];
+                for (int i = 1; i < 10 ; i++) {
+                    array[i-1] = array[i];
+                }
+                array[9] = b;
+            }
+            System.out.println("Сдвигаем массив влево на " + Math.abs(a)  + " элемента(ов)" );
+            System.out.println(Arrays.toString(array));
+        }
     }
+}
 
 
 
