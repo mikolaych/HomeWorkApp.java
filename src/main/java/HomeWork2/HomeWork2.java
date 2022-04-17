@@ -3,7 +3,7 @@ package HomeWork2;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class HomeWork<array> {
+public class HomeWork2<array> {
     public static void main(String[] args) {
 //        ArrayChange();
 //        ArrayLoad();

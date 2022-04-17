@@ -1,6 +1,6 @@
-package lesson1;
+package HomeWork1;
 import java.util.Scanner;
-public class HomeWorkApp {
+public class HomeWork1 {
     public static void main(String[] args) {
         printTreeWords();
         checkSumSign();
