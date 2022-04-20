@@ -10,10 +10,9 @@ public class HomeWork3 {
 //        Array100();
 //        Array6to2();
 //        ArraySqare();
-        ArrayLen();
+//        ArrayLen();
 //        RandomNumber();
-//        ArrayWords();
-
+        ArrayWords();
 
 
     }
@@ -50,6 +49,7 @@ public class HomeWork3 {
 
     /*Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом,
     и числа меньшие 6 умножить на 2;*/
+
     private static void Array6to2() {
         int[] array6to2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         for (int i = 0; i < 12; i++) {
@@ -83,8 +83,12 @@ public class HomeWork3 {
     и возвращающий одномерный массив типа int длиной len, каждая ячейка которого равна initialValue;*/
 
     private static void ArrayLen() {
-        int len = 10;
-        int initialValue = 20;
+        System.out.print("Input array's length  ");
+        Scanner len1 = new Scanner(System.in);
+        int len = len1.nextInt();
+        System.out.print("Input array's cell's number  ");
+        Scanner initialValue1 = new Scanner(System.in);
+        int initialValue = initialValue1.nextInt();
         int[] array = new int[len];
         for (int i = 0; i < len; i++) {
             array[i] = initialValue;
@@ -107,9 +111,9 @@ public class HomeWork3 {
                 Scanner b = new Scanner(System.in);
                 int c = b.nextInt();
                 if (c > a) {
-                    System.out.println("Your number biggest ");
+                    System.out.println("Your number is biggest ");
                 } else if (c < a) {
-                    System.out.println("Your number smallest");
+                    System.out.println("Your number is smallest");
                 } else {
                     System.out.println("You're win!!!");
                     break;
@@ -135,7 +139,18 @@ public class HomeWork3 {
                 "avocado", "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak", "kiwi",
                 "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper", "pineapple",
                 "pumpkin", "potato"};
-
+        String[] userWordsArray = {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"};
+        Random random = new Random();
+        int a = random.nextInt(0, 25);
+        String compWord = words[a];
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input your word:  ");
+        String userWord = scanner.nextLine();
+        if (compWord == userWord) {
+            System.out.println("You're win!!!");
+        } else {
+            System.out.println("You're wrong!!");
+        }
 
 
     }
