@@ -1,5 +1,6 @@
 package Lesson4;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class TicTacToe {
     final static char DOT_HUMAN = 'X';
     final static char DOT_AI = '0';
     public static char[][] field = new char[SIZE][SIZE];
+    public static int W;
 
     public static void main(String[] args) {
         inputConditions();
@@ -18,13 +20,14 @@ public class TicTacToe {
         initialField();
         int b = 0;
         drawField();
-        do {
+        while ( W != 1 || b < SIZE * SIZE){
             humanMove();
             drawField();
             aiMove();
             drawField();
             b++;
-        } while (b < SIZE * SIZE);
+        }
+
     }
 
     private static void inputConditions() {
@@ -87,6 +90,7 @@ public class TicTacToe {
             System.out.print("Введите номер столбца: ");
             Scanner scanner1 = new Scanner(System.in);
             columnHuman = scanner1.nextInt() - 1;
+
             if (cellFree(rowHuman, columnHuman)) {
                 break;
             } else {
@@ -95,7 +99,8 @@ public class TicTacToe {
 
         }
         System.out.println("Человек ходит");
-        field[rowHuman][columnHuman] = DOT_HUMAN ;
+        field[rowHuman][columnHuman] = DOT_HUMAN;
+        chipControlHuman(rowHuman, columnHuman);
     }
 
     private static boolean cellFree(int rowHuman, int columnHuman) {
@@ -116,7 +121,40 @@ public class TicTacToe {
             }
         }
         field[rowAi][columnAi] = DOT_AI;
+    }
 
+    private static void chipControlHuman(int row, int column) {
+        int a = 0;
+        int b = 0;
+        for (int i = row; i <= row; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                a = a + field[i][j];
+                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_AI) {
+                    a = 0;
+                }
+                if ((NUMBER_OF_CHIP == 3 && a == 264) || (NUMBER_OF_CHIP == 4 && a == 352) || (NUMBER_OF_CHIP == 5 && a == 440)) {
+                    W = 1;
+                    System.out.println("Человек победил!!!");
+                    break;
+                }
+            }
+        }
+
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = column; j <= column; j++) {
+                b = b + field[i][j];
+                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_AI) {
+                    b = 0;
+                }
+                if ((NUMBER_OF_CHIP == 3 && b == 264) || (NUMBER_OF_CHIP == 4 && b == 352) || (NUMBER_OF_CHIP == 5 && b == 440)) {
+                    W = 1;
+                    System.out.println("Человек победил!!!");
+                    break;
+                }
+
+            }
+
+        }
 
     }
 }
