@@ -18,25 +18,29 @@ public class TicTacToe {
         inputConditions();
         field = new char[SIZE][SIZE];
         initialField();
-
-        int b = 0;
         drawField();
-        while ( W != 12 || W !=13 || W !=14){
-
-        humanMove();
+        int allChips = 0;
+        while (W != 1 && W != 2 && allChips != SIZE * SIZE) {
+            int W = 0;
+            humanMove();
             drawField();
-            if (W != 12) {
+            allChips++;
+            if (W != 1) {
                 aiMove();
                 drawField();
+                allChips++;
+            } else {
+                break;
             }
-            int W;
+
         }
-        if (W == 12){
+        if (W == 1) {
             System.out.println("Чел победил!!!");
-        } else if (W == 13){
+        } else if (W == 2) {
             System.out.println("Комп победил!!!");
-        } else if(W == 14){
-            System.out.println("Ничья!!!");
+        } else if (allChips == SIZE * SIZE){
+            drawField();
+            System.out.println("Ничья");
         }
 
     }
@@ -128,25 +132,28 @@ public class TicTacToe {
                     a = 0;
                 }
                 if ((NUMBER_OF_CHIP == 3 && a == 264) || (NUMBER_OF_CHIP == 4 && a == 352) || (NUMBER_OF_CHIP == 5 && a == 440)) {
-                    W = 12;
+                    W = 1;
                     break;
+
+
                 }
             }
         }
+        if (W != 1) {
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = column; j <= column; j++) {
+                    b = b + field[i][j];
+                    if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_AI) {
+                        b = 0;
+                    }
+                    if ((NUMBER_OF_CHIP == 3 && b == 264) || (NUMBER_OF_CHIP == 4 && b == 352) || (NUMBER_OF_CHIP == 5 && b == 440)) {
+                        W = 1;
+                        break;
+                    }
 
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = column; j <= column; j++) {
-                b = b + field[i][j];
-                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_AI) {
-                    b = 0;
-                }
-                if ((NUMBER_OF_CHIP == 3 && b == 264) || (NUMBER_OF_CHIP == 4 && b == 352) || (NUMBER_OF_CHIP == 5 && b == 440)) {
-                    W = 12;
-                    break;
                 }
 
             }
-
         }
 
     }
@@ -177,26 +184,28 @@ public class TicTacToe {
                 if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_HUMAN) {
                     a = 0;
                 }
-                if ((NUMBER_OF_CHIP == 3 && a == 375) || (NUMBER_OF_CHIP == 4 && a == 500) || (NUMBER_OF_CHIP == 5 && a == 625)) {
-                    W = 13;
+                if ((NUMBER_OF_CHIP == 3 && a == 237) || (NUMBER_OF_CHIP == 4 && a == 316) || (NUMBER_OF_CHIP == 5 && a == 395)) {
+                    W = 2;
                     break;
                 }
             }
         }
+        if (W != 2) {
 
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = column; j <= column; j++) {
-                b = b + field[i][j];
-                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_HUMAN) {
-                    b = 0;
-                }
-                if ((NUMBER_OF_CHIP == 3 && b == 375) || (NUMBER_OF_CHIP == 4 && b == 500) || (NUMBER_OF_CHIP == 5 && b == 625)) {
-                    W = 13;
-                    break;
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = column; j <= column; j++) {
+                    b = b + field[i][j];
+                    if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_HUMAN) {
+                        b = 0;
+                    }
+                    if ((NUMBER_OF_CHIP == 3 && b == 237) || (NUMBER_OF_CHIP == 4 && b == 316) || (NUMBER_OF_CHIP == 5 && b == 395)) {
+                        W = 2;
+                        break;
+                    }
+
                 }
 
             }
-
         }
 
     }
