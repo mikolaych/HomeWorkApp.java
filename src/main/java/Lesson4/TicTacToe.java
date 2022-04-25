@@ -10,7 +10,7 @@ public class TicTacToe {
     static int NUMBER_OF_CHIP;
     final static char DOT_EMPTY = '.';
     final static char DOT_HUMAN = 'X';
-    final static char DOT_AI = '0';
+    final static char DOT_AI = 'O';
     public static char[][] field = new char[SIZE][SIZE];
     public static int W;
 
@@ -18,14 +18,25 @@ public class TicTacToe {
         inputConditions();
         field = new char[SIZE][SIZE];
         initialField();
+
         int b = 0;
         drawField();
-        while ( W != 1 || b < SIZE * SIZE){
-            humanMove();
+        while ( W != 12 || W !=13 || W !=14){
+
+        humanMove();
             drawField();
-            aiMove();
-            drawField();
-            b++;
+            if (W != 12) {
+                aiMove();
+                drawField();
+            }
+            int W;
+        }
+        if (W == 12){
+            System.out.println("Чел победил!!!");
+        } else if (W == 13){
+            System.out.println("Комп победил!!!");
+        } else if(W == 14){
+            System.out.println("Ничья!!!");
         }
 
     }
@@ -107,6 +118,39 @@ public class TicTacToe {
         return field[rowHuman][columnHuman] == DOT_EMPTY;
     }
 
+    private static void chipControlHuman(int row, int column) {
+        int a = 0;
+        int b = 0;
+        for (int i = row; i <= row; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                a = a + field[i][j];
+                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_AI) {
+                    a = 0;
+                }
+                if ((NUMBER_OF_CHIP == 3 && a == 264) || (NUMBER_OF_CHIP == 4 && a == 352) || (NUMBER_OF_CHIP == 5 && a == 440)) {
+                    W = 12;
+                    break;
+                }
+            }
+        }
+
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = column; j <= column; j++) {
+                b = b + field[i][j];
+                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_AI) {
+                    b = 0;
+                }
+                if ((NUMBER_OF_CHIP == 3 && b == 264) || (NUMBER_OF_CHIP == 4 && b == 352) || (NUMBER_OF_CHIP == 5 && b == 440)) {
+                    W = 12;
+                    break;
+                }
+
+            }
+
+        }
+
+    }
+
     private static void aiMove() {
         int rowAi = 0;
         int columnAi = 0;
@@ -121,20 +165,20 @@ public class TicTacToe {
             }
         }
         field[rowAi][columnAi] = DOT_AI;
+        chipControlAi(rowAi, columnAi);
     }
 
-    private static void chipControlHuman(int row, int column) {
+    private static void chipControlAi(int row, int column) {
         int a = 0;
         int b = 0;
         for (int i = row; i <= row; i++) {
             for (int j = 0; j < SIZE; j++) {
                 a = a + field[i][j];
-                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_AI) {
+                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_HUMAN) {
                     a = 0;
                 }
-                if ((NUMBER_OF_CHIP == 3 && a == 264) || (NUMBER_OF_CHIP == 4 && a == 352) || (NUMBER_OF_CHIP == 5 && a == 440)) {
-                    W = 1;
-                    System.out.println("Человек победил!!!");
+                if ((NUMBER_OF_CHIP == 3 && a == 375) || (NUMBER_OF_CHIP == 4 && a == 500) || (NUMBER_OF_CHIP == 5 && a == 625)) {
+                    W = 13;
                     break;
                 }
             }
@@ -143,12 +187,11 @@ public class TicTacToe {
         for (int i = 0; i < SIZE; i++) {
             for (int j = column; j <= column; j++) {
                 b = b + field[i][j];
-                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_AI) {
+                if (field[i][j] == DOT_EMPTY || field[i][j] == DOT_HUMAN) {
                     b = 0;
                 }
-                if ((NUMBER_OF_CHIP == 3 && b == 264) || (NUMBER_OF_CHIP == 4 && b == 352) || (NUMBER_OF_CHIP == 5 && b == 440)) {
-                    W = 1;
-                    System.out.println("Человек победил!!!");
+                if ((NUMBER_OF_CHIP == 3 && b == 375) || (NUMBER_OF_CHIP == 4 && b == 500) || (NUMBER_OF_CHIP == 5 && b == 625)) {
+                    W = 13;
                     break;
                 }
 
@@ -157,4 +200,6 @@ public class TicTacToe {
         }
 
     }
+
+
 }
