@@ -25,14 +25,13 @@ public class TicTacToe {
             humanMove();
             drawField();
             allChips++;
-            if (W != 1) {
+            if (W != 1 && allChips != SIZE * SIZE) {
                 aiMove();
                 drawField();
                 allChips++;
             } else {
                 break;
             }
-
         }
         if (W == 1) {
             System.out.println("Чел победил!!!");
@@ -40,9 +39,8 @@ public class TicTacToe {
             System.out.println("Комп победил!!!");
         } else if (allChips == SIZE * SIZE){
             drawField();
-            System.out.println("Ничья");
+            System.out.println("Ничья!!!");
         }
-
     }
 
     private static void inputConditions() {
@@ -199,12 +197,7 @@ public class TicTacToe {
                         W = 2;
                         break;
                     }
-
                 }
-
-            }
-        }
-
+            }        }
     }
-
 }
