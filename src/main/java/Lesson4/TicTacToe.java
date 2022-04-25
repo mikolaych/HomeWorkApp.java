@@ -150,12 +150,9 @@ public class TicTacToe {
                         W = 1;
                         break;
                     }
-
                 }
-
             }
         }
-
     }
 
     private static void aiMove() {
@@ -209,6 +206,5 @@ public class TicTacToe {
         }
 
     }
-
 
 }
