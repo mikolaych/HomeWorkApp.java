@@ -1,10 +1,11 @@
 package Lesson6HW;
 
 public class Dog extends Animals {
-    Animals dog1 = new Animals("Sharik", 500, 10, 0, 0);
+    public static int countOfDog;
 
-    public Dog(String animalName, int maxDistanceToRun, int maxDistanceToSwim) {
-        super(animalName, maxDistanceToRun, maxDistanceToSwim, 0, 0);
+    public Dog(String  classAnimal, String animalName, int maxDistanceToRun, int maxDistanceToSwim) {
+        super("Собак", animalName, maxDistanceToRun, maxDistanceToSwim, 0, 0);
+        countOfDog++;
     }
 
 
