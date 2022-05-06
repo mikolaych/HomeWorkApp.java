@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Animals {
     private String animalName;
-    private final int maxDistanceToRun;
+    private  int maxDistanceToRun;
     private  int maxDistanceToSwim;
     private int distanceToRun;
     private int distanceToSwim;
@@ -66,6 +66,28 @@ public class Animals {
         return distanceToSwim;
     }
 
+    public void setMaxDistanceToSwim(int maxDistanceToSwim) {
+        System.out.print("Предельная дистанция для плавания:  ");
+        Scanner maxSwim = new Scanner(System.in);
+        maxDistanceToSwim = maxSwim.nextInt();
+        this.maxDistanceToSwim = maxDistanceToSwim;
+    }
+
+    public int getMaxDistanceToSwim() {
+        return maxDistanceToSwim;
+    }
+
+    public int getMaxDistanceToRun() {
+        return maxDistanceToRun;
+    }
+
+    public void setMaxDistanceToRun(int maxDistanceToRun) {
+        System.out.print("Предельная дистанция для бега:  ");
+        Scanner maxRun = new Scanner(System.in);
+        maxDistanceToRun = maxRun.nextInt();
+        this.maxDistanceToRun = maxDistanceToRun;
+    }
+
     public boolean run() {
         if (getDistanceToRun() > maxDistanceToRun) {
             return false;
@@ -82,6 +104,7 @@ public class Animals {
             return true;
         }
     }
+
 
 
     public void animalInfoToPrint() {
