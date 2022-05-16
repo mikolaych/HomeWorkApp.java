@@ -3,10 +3,9 @@ package Lesson7;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MainClass {
-    static int I = 4;
     public static void main(String[] args) {
 //        Cat cat1 = new Cat("Мурзик", 10, false);
-        Cat[] cats = new Cat[I];
+        Cat[] cats = new Cat[4];
         cats[0] = new Cat("Барсик", 0, false);
         cats[1] = new Cat("Мурзик", 0, false);
         cats[2] = new Cat("Козлик", 0, false);
@@ -20,15 +19,13 @@ public class MainClass {
             plate.catInfo(cat);
             plate.plateFoodInfo();
         }
-        for (Cat cat : cats) {
-            plate.catInfo(cat);
-        }
 //        cat1.setAppetite(cat1.getAppetite());
 
         /*while ((plate.getFood() > 0) && (plate.getFood() >= cat1.getAppetite()) && !cat1.isSatiety()) {
             cat1.eat(plate);
         }*/
 
-    }
 
+
+    }
 }
