@@ -46,9 +46,8 @@ public class Plate {
                 sat = false;
             }
 
-
         } else if (satiety){
-            System.out.println("Кот " + name + " сыт");
+            sat = true;
 
         }
 
