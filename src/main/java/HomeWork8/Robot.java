@@ -1,10 +1,11 @@
 package HomeWork8;
 
 public class Robot implements Action {
-    private String type;
+    private final String type;
     private String name;
     private int runDistance;
     private int jumpDistance;
+    private boolean status;
 
     public Robot(String type, String name, int runDistance, int jumpDistance) {
         this.type = "Железяка";
@@ -40,6 +41,7 @@ public class Robot implements Action {
     @Override
     public void run(Treadmill r) {
         r.runDistance(type, name, getRunDistance());
+
     }
 
     @Override

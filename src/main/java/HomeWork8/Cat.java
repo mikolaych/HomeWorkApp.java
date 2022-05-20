@@ -1,10 +1,11 @@
 package HomeWork8;
 
 public class Cat implements Action {
-    private String type;
+    private final String type;
     private String name;
     private int runDistance;
     private int jumpDistance;
+    public boolean status;
 
     public Cat(String type, String name, int runDistance, int jumpDistance) {
         this.type = "Кошак";
@@ -40,6 +41,7 @@ public class Cat implements Action {
     @Override
     public void run(Treadmill r) {
         r.runDistance(type, name, getRunDistance());
+
     }
 
     @Override

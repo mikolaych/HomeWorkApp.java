@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Treadmill {
     private int distance;
-    private boolean runJumpMethodStatus;
+    private static boolean runStatus;
 
     public Treadmill(int distance) {
         this.distance = distance;
@@ -18,29 +18,25 @@ public class Treadmill {
         this.distance = distance;
     }
 
-    public boolean isRunJumpMethodStatus() {
-        return runJumpMethodStatus;
+    public static boolean isRunStatus() {
+        return runStatus;
     }
-
-    public void setRunJumpMethodStatus(boolean runJumpMethodStatus) {
-        this.runJumpMethodStatus = runJumpMethodStatus;
+    public static void setRunStatus(boolean runStatus) {
+        Treadmill.runStatus = runStatus;
     }
-
     public void runDistance(String type, String name, int runDistance){
-        System.out.println("Сейчас " + type + " " + name + " мощностью " + runDistance +" единиц попробует зарамсить тему!");
-        System.out.print("Бежать ему:  ");
+        System.out.println("Сейчас " + type + " " + name + " выносливостю " + runDistance +" единиц попробует зарамсить тему!");
+        System.out.print("Бежать ему(метры):  ");
         Scanner millDistance = new Scanner(System.in);
         setDistance(millDistance.nextInt());
         if (getDistance() <= runDistance){
             System.out.println(name + " Пробежал " + getDistance() +  " единиц влегкую, даже не вспотел!");
-            setRunJumpMethodStatus(true);
+            setRunStatus(true);
         } else {
             System.out.println(name + " к успеху шел, но не получилось, не фартануло. Мышцу потянул, дальше не пойдет, ибо мастдай");
-            setRunJumpMethodStatus(false);
+            setRunStatus(false);
         }
 
     }
-    public void runJumpMethod(Wall r){
-        r.setRunJumpMethod(isRunJumpMethodStatus());
-    }
+
 }
