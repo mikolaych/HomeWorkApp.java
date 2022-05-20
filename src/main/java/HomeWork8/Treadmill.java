@@ -2,7 +2,7 @@ package HomeWork8;
 
 import java.util.Scanner;
 
-public class Treadmill {
+public class Treadmill implements TreadmillMassive {
     private int distance;
     private static boolean runStatus;
 
@@ -25,7 +25,7 @@ public class Treadmill {
         Treadmill.runStatus = runStatus;
     }
     public void runDistance(String type, String name, int runDistance){
-        System.out.println("Сейчас " + type + " " + name + " выносливостю " + runDistance +" единиц попробует зарамсить тему!");
+        System.out.println("Сейчас " + type + " " + name + " выносливостю " + runDistance +" единиц попробует зарамсить тему по бегу!");
         System.out.print("Бежать ему(метры):  ");
         Scanner millDistance = new Scanner(System.in);
         setDistance(millDistance.nextInt());

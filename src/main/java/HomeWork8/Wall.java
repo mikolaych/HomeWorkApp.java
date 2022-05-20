@@ -2,7 +2,7 @@ package HomeWork8;
 
 import java.util.Scanner;
 
-public class Wall {
+public class Wall implements WallMassive {
     private int height;
 
     public Wall(int height) {
@@ -32,4 +32,6 @@ public class Wall {
             }
         }
     }
+
+
 }

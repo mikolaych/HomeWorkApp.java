@@ -48,4 +48,6 @@ public class Robot implements Action {
     public void jump(Wall j) {
         j.jumpDistance(type, name, getJumpDistance());
     }
+
+
 }

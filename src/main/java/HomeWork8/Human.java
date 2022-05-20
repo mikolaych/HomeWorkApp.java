@@ -49,5 +49,4 @@ public class Human implements Action {
         j.jumpDistance(type, name, getJumpDistance());
     }
 
-
 }

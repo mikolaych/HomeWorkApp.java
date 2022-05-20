@@ -48,5 +48,4 @@ public class Cat implements Action {
         j.jumpDistance(type, name, getJumpDistance());
     }
 
-
 }
