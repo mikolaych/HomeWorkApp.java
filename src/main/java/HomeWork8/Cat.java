@@ -5,7 +5,6 @@ public class Cat implements Action {
     private String name;
     private int runDistance;
     private int jumpDistance;
-    public boolean status;
 
     public Cat(String type, String name, int runDistance, int jumpDistance) {
         this.type = "Кошак";
